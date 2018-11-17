@@ -1,0 +1,79 @@
+body {
+  text-align: center;
+  text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
+  font-family: 'Roboto', sans-serif;
+  color: rgb(66,69,86);
+  background-image: url('./bg.jpg');
+  background-size: cover;
+  font-weight: 100;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+h1{
+  margin: 0;
+  font-size: 150px;
+  line-height: 400px;
+  font-weight: 100;
+}
+
+p {
+  margin: 0;
+  font-size: 30px;
+}
+
+.form {
+	line-height: 1.5;
+	border: none;
+	border-bottom: 3px solid #eb802a;
+	margin-top: 100px;
+	width: 700px;
+	font-size: 2em;
+	color: #eb802a;
+	padding: 5px 10px;
+	background: transparent;
+}
+
+button {
+    line-height: 2.0;
+    border: none;
+    border:3px solid #eb802a;
+    font-size: 1em;
+    color: #fff;
+    padding: 5px 30px;
+    background: #eb802a;
+    border-color: #eb802a
+    border-radius: 5px;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.form::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #eb802a;
+  opacity: 1; /* Firefox */
+}
+
+.form:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #eb802a;
+}
+
+.form::-ms-input-placeholder { /* Microsoft Edge */
+  color: #eb802a;
+}
+
+button:hover{
+  opacity: 1;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: rgba(255,255,255,0.8);
+}
+
+input[type=text]:focus {
+  outline: none;
+}
