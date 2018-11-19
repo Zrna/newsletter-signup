@@ -63,3 +63,14 @@ button:hover{
 input[type=text]:focus {
   outline: none;
 }
+
+.terms{
+  padding-top: 20px;
+}
+
+.newsletterTerms{
+  color: #fff;
+  text-shadow: 0 0.05rem 0.1rem #000;
+  font-weight: 300;
+  cursor: pointer;
+}

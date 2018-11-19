@@ -23,8 +23,10 @@ connection.connect(function (err) {
     }
 
     let createUsers = `create table if not exists users(
-                            email VARCHAR(255) PRIMARY KEY,
-                            created_at TIMESTAMP DEFAULT NOW()
+                            id INT AUTO_INCREMENT PRIMARY KEY,
+                            email VARCHAR(255) NOT NULL,
+                            created_at TIMESTAMP DEFAULT NOW(),
+                            terms_accepted INT(1) NOT NULL DEFAULT '0'
                       )`;
 
     connection.query(createUsers, function (err, results, fields) {
@@ -67,8 +69,10 @@ app.get('/', function(req, res){
 
 app.post('/register', function(req, res){
     var person = {
-        email: req.body.email
+        email: req.body.email,
+        terms_accepted: req.body.newsletterTerms ? '1' : '0' // set terms_accepted value in db to 1 or 0, depends on whether the checkbox is checked or not
     }
+    console.log(person);
     
     connection.query('INSERT INTO users SET ?', person, function(err, result){
         if (err) throw err;
