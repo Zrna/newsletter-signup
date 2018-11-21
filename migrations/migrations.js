@@ -1,3 +1,4 @@
+var faker = require('faker');
 var mysql = require('mysql');
 var migration = require('mysql-migrations');
 
@@ -28,21 +29,19 @@ module.exports = {
     "down": ""
 }
 
-// inserting fake users data
-var insertUserData = `INSERT INTO users (email)
-            VALUES ('Esteban.Barrows10@yahoo.com'),
-            ('Jodie.Sauer55@gmail.com'),
-            ('Skylar90@hotmail.com'),
-            ('Samara.Hartmann42@gmail.com'),
-            ('Trinity_Terry20@gmail.com'),
-            ('Donnell.Wisoky96@yahoo.com'),
-            ('Ezra_Rutherford@gmail.com'),
-            ('Demetrius.Hoppe94@hotmail.com'),
-            ('Zelda.Pfannerstill@gmail.com'),
-            ('Marcia.Cormier@yahoo.com')`;
+// inserting fake users data using faker
+var data = [];
+for (var i = 0; i < 10; i++) {
+    data.push([
+        faker.internet.email(),
+        faker.date.past()
+    ]);
+};
+
+var insertUserData = 'INSERT INTO users (email, created_at) VALUES ?';
 
 module.exports = {
-    "up": connection.query(insertUserData, function (error, results) {
+    "up": connection.query(insertUserData, [data], function (error, results) {
         if (error) throw error;
         console.log(results);
     })
