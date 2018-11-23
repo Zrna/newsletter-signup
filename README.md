@@ -32,7 +32,7 @@ Installation
 2. Go into the project `cd JoinUs`
 3. Run `npm install`
 4. Create database and name it "join_us"
-5. Set username and password in **app.js** -> **line 13 and 14**
+5. Rename config_example.js file to config.js and set username and password
 6. Run `node migrations/migrations.js`
 7. Run `node app.js`
 

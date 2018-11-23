@@ -1,15 +1,9 @@
-var faker = require('faker');
+var config = require('../config/config.js');
 var mysql = require('mysql');
-var migration = require('mysql-migrations');
+var connection = mysql.createPool(config.databaseOptions);
 
-var connection = mysql.createPool({
-    connectionLimit: 10,
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'join_us',
-    timezone: 'UTC+1'
-});
+var faker = require('faker');
+var migration = require('mysql-migrations');
 
 migration.init(connection, __dirname + '/migrations');
 
