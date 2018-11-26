@@ -26,9 +26,19 @@ app.post('/register', function (req, res) {
     }
     console.log(person);
 
-    connection.query('INSERT INTO users SET ?', person, function (err, result) {
-        if (err) throw err;
-        res.redirect('/');
+    let sqlCheckQuery = 'SELECT * FROM users WHERE email = ? LIMIT 1';
+
+    connection.query(sqlCheckQuery, [person.email], function (error, results) {
+        if (results.length) {
+            console.log('The email ' + person.email + ' already exists.');
+            res.render('error', {email: person.email, home: '/'});
+        } else {
+            connection.query('INSERT INTO users SET ?', person, function (err, result) {
+                if (err) throw err;
+                res.redirect('/');
+            });
+            console.log('Email ' + person.email + ' has been added to database.');
+        }
     });
 });
 
