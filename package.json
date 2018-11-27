@@ -1,10 +1,13 @@
 {
-  "name": "join_us",
+  "name": "newsletter-signup",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migration": "node migrations/migrations.js",
+    "app": "node app.js",
+    "start": "start http://localhost:8080 & npm run app"
   },
   "author": "",
   "license": "ISC",
