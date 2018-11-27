@@ -38,5 +38,6 @@ module.exports = {
     "up": connection.query(insertUserData, [data], function (error, results) {
         if (error) throw error;
         console.log(results);
+        console.log('Inserting fake emails completed.')
     })
 }
