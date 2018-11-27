@@ -6,7 +6,7 @@ Description
 Landing page for sign up to newsletter.
 All entered emails will be saved into "users" table in "newsletter_subscribers" database (which you need to create - read Installation instructions).
 
-Runing `npm run migration` application will create "users" table and insert fake users emails.
+Running `npm run migration` application will create "users" table and insert fake users emails.
 
 Created using NodeJS and MySql.
 
