@@ -29,14 +29,14 @@ README.md
 Installation
 ---
 1. Download or clone the project
-2. Go into the project `cd JoinUs`
+2. Go into the project `cd newsletter-signup`
 3. Run `npm install`
-4. Create database and name it "join_us"
+4. Create database and name it "newsletter_subscribers"
 5. Rename config_example.js file to config.js and set username and password
-6. Run `node migrations/migrations.js`
-7. Run `node app.js`
+6. Run `npm run migration`
+7. Run `npm start`
 
-Application will run on localhost:8080
+Application will open on localhost:8080
 
 Screenshot
 ---
