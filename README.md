@@ -4,9 +4,9 @@
 Description
 ---
 Landing page for sign up to newsletter.
-All entered emails will be saved into "users" table in "join_us" database (which you need to create - read Installation instructions).
+All entered emails will be saved into "users" table in "newsletter_subscribers" database (which you need to create - read Installation instructions).
 
-Using `node migrations/migrations.js` application will create "users" table and insert fake users emails.
+Runing `npm run migration` application will create "users" table and insert fake users emails.
 
 Created using NodeJS and MySql.
 
@@ -21,9 +21,14 @@ File List
 
 app.js
 
-schema.sql
+package-lock.json
+
+package.json
 
 README.md
+
+schema.sql
+
 ```
 
 Installation
