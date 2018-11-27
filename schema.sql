@@ -1,4 +1,4 @@
-CREATE DATABASE join_us;
+CREATE DATABASE newsletter_subscribers;
 
 CREATE TABLE if not exists users(
     id INT AUTO_INCREMENT PRIMARY KEY,
